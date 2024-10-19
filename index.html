@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Tặng Cho Cô</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe4e1;
+            color: #1e90ff; /* Màu chữ xanh dương nhạt */
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #1e90ff; /* Màu chữ tiêu đề xanh dương nhạt */
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            opacity: 0; /* Ẩn văn bản ban đầu */
+            transition: opacity 1s ease;
+            color: #1e90ff; /* Màu chữ đoạn văn xanh dương nhạt */
+        }
+
+        button {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #d5006d;
+        }
+
+        #typed-text {
+            margin-top: 30px;
+            font-size: 1.8em;
+            color: #1e90ff; /* Màu chữ nội dung nhập từng chữ xanh dương nhạt */
+        }
+    </style>
+</head>
+<body>
+    <h1>Quà Tặng Dành Cô</h1>
+    
+    <div>
+        <p>Nhấn vào nút bên dưới để xem lời chúc của con nhé!</p>
+        <button onclick="startTyping()">Nhận quà</button>
+        <div id="typed-text"></div>
+    </div>
+
+    <script>
+        const message = "Con xin chúc Cô một ngày 20/10 vui vẻ, ngày càng xinh đẹp hơn và hạnh phúc hơn. Thành công trong mọi việc. Chúc Cô tất cả ";
+
+        function startTyping() {
+            const typedTextDiv = document.getElementById("typed-text");
+            typedTextDiv.innerHTML = ""; // Xóa nội dung cũ
+            let i = 0;
+
+            function typeWriter() {
+                if (i < message.length) {
+                    typedTextDiv.innerHTML += message.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100); // Tốc độ chạy từng chữ
+                } else {
+                    // Hiện đoạn văn sau khi hoàn thành
+                    typedTextDiv.style.opacity = 1; 
+                }
+            }
+            typeWriter(); // Gọi hàm để bắt đầu chạy chữ
+        }
+    </script>
+</body>
+</html>
+
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bó Hoa Mini</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .bouquet {
+            position: relative;
+            width: 100px;
+            height: 150px;
+        }
+
+        .flower {
+            position: absolute;
+            border-radius: 50%;
+            background-color: pink;
+        }
+
+        /* Các bông hoa */
+        .flower1 {
+            width: 30px;
+            height: 30px;
+            top: 10px;
+            left: 20px;
+        }
+
+        .flower2 {
+            width: 25px;
+            height: 25px;
+            top: 15px;
+            left: 50px;
+        }
+
+        .flower3 {
+            width: 35px;
+            height: 35px;
+            top: 5px;
+            left: 40px;
+        }
+
+        .flower4 {
+            width: 20px;
+            height: 20px;
+            top: 25px;
+            left: 30px;
+        }
+
+        .stem {
+            position: absolute;
+            width: 5px;
+            height: 80px;
+            background-color: green;
+            bottom: 0;
+            left: 45px;
+            border-radius: 5px;
+        }
+
+        .leaves {
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        .leaf1 {
+            top: 60px;
+            left: 30px;
+            transform: rotate(30deg);
+        }
+
+        .leaf2 {
+            top: 60px;
+            left: 50px;
+            transform: rotate(-30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="bouquet">
+        <div class="flower flower1"></div>
+        <div class="flower flower2"></div>
+        <div class="flower flower3"></div>
+        <div class="flower flower4"></div>
+        <div class="stem"></div>
+        <div class="leaves leaf1"></div>
+        <div class="leaves leaf2"></div>
+    </div>
+</body>
+</html>
